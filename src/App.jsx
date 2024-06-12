@@ -1,7 +1,7 @@
-import RandomQuote from "./RandomQuote";
+import TypewriterEffect from "./TypewriteEffect";
 
 function App() {
-  return <RandomQuote />;
+  return <TypewriterEffect />;
 }
 
 export default App;
