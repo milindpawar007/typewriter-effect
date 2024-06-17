@@ -1,4 +1,4 @@
-import TypewriterEffect from "./TypewriteEffect";
+import TypewriterEffect from "./TypewriterEffect";
 
 function App() {
   return <TypewriterEffect />;
