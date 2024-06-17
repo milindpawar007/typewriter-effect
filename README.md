@@ -1,17 +1,17 @@
-# React + Vite
+# Build a Typewriter effect component
 
-Basic React boilerplate using Vite.
+> This repository is the companion to the ["Build a Typewriter effect component"](TODO ADD LINK) practice exercise.
 
-Starts off from the React Javascript Vite template ([@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh)
+Given a sentence, display it with half a second delay between each character.
+Start showing nothing and then display characters one by one until the full sentence is displayed.
+No style is required.
 
-Adds on top:
+To get started, you can clone this starter repo.
+When you're ready to check your work, check out [the official solution](TODO ADD LINK).
 
-- support for testing React components with `vitest` and React Testing Library
-- support for mocking HTTP requests in tests using `msw`
-
-Getting started:
+## Getting started:
 
 - `npm install`
 - `npm run dev`
 
-To run the tests: `npm run test`.
+Add your code to the `src/TypewriterEffect.jsx` file.
