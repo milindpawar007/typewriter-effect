@@ -2,24 +2,22 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const TypewriterEffect = () => {
   const [typedSentence, setTypedSentence] = useState("");
-  const [typewriterIntervalId, setTypewriterIntervalId] = useState(null);
   const savedCallback = useRef();
+  const intervalId = useRef();
 
   // start the interval and save its id,
   // so we can stop it once all letters are typed
   const startTyping = (sentence) => {
     setTypedSentence("");
-    const typewriterIntervalId = setInterval(() => {
+    intervalId.current = setInterval(() => {
       savedCallback.current(sentence);
     }, 500);
-    setTypewriterIntervalId(typewriterIntervalId);
   };
 
   // stop the interval
   const stopTyping = useCallback(() => {
-    clearInterval(typewriterIntervalId);
-    setTypewriterIntervalId(null);
-  }, [typewriterIntervalId]);
+    clearInterval(intervalId.current);
+  }, []);
 
   const typeNextLetter = useCallback(
     (sentence) => {
