@@ -17,6 +17,7 @@ const TypewriterEffect = () => {
   // stop the interval
   const stopTyping = useCallback(() => {
     clearInterval(intervalId.current);
+    intervalId.current = null;
   }, []);
 
   const typeNextLetter = useCallback(
