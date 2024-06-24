@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TypewriterEffect = () => {
   const [typedSentence, setTypedSentence] = useState("");
@@ -15,29 +15,26 @@ const TypewriterEffect = () => {
   };
 
   // stop the interval
-  const stopTyping = useCallback(() => {
+  const stopTyping = () => {
     clearInterval(intervalId.current);
     intervalId.current = null;
-  }, []);
+  };
 
-  const typeNextLetter = useCallback(
-    (sentence) => {
-      const letters = Array.from(sentence);
-      if (typedSentence.length === letters.length) {
-        // we typed all the letters
-        stopTyping();
-        return;
-      }
-      // else, type next letter
-      const nextLetterIndex = typedSentence.length;
-      setTypedSentence(typedSentence + letters[nextLetterIndex]);
-    },
-    [typedSentence, stopTyping]
-  );
+  const typeNextLetter = (sentence) => {
+    const letters = Array.from(sentence);
+    if (typedSentence.length === letters.length) {
+      // we typed all the letters
+      stopTyping();
+      return;
+    }
+    // else, type next letter
+    const nextLetterIndex = typedSentence.length;
+    setTypedSentence(typedSentence + letters[nextLetterIndex]);
+  };
 
   useEffect(() => {
     savedCallback.current = typeNextLetter;
-  }, [typeNextLetter]);
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
